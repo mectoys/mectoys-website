@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MectoysTV - Desarrollo y Tutoriales</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --color-primario: #2A5CAA;
+            --color-secundario: #333333;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://source.unsplash.com/random/1920x1080/?code') center/cover;
+            color: white;
+            padding: 120px 0;
+            margin-top: 56px;
+        }
+        
+        .project-card img {
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .carousel-item {
+            transition: transform 0.9s ease-in-out !important;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            top: 40%;
+            background-color: rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background-color: rgba(0,0,0,0.3);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"> <img src="media/LogoMectoysTVYT_2024.png" alt="mectoys" width="100"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-center">
+        <div class="container">
+            <img src="media/Fotomectoys.png" alt="José Ponciano" class="rounded-circle mb-4" width="150">
+            <h1 class="display-4">Transformando ideas en código</h1>
+            <p class="lead">15+ años de experiencia en desarrollo de software y creación de contenido educativo</p>
+            <div class="mt-4">
+                <a href="https://youtube.com/@mectoystv" class="btn btn-danger btn-lg mx-2">
+                    <i class="fab fa-youtube"></i> Ver Tutoriales
+                </a>
+                <a href="https://github.com/mectoys" class="btn btn-dark btn-lg mx-2">
+                    <i class="fab fa-github"></i> Explora Proyectos
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Servicios -->
+    <section id="servicios" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">✨ Lo Que Ofrezco</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body text-center">
+                            <i class="fab fa-youtube fa-3x text-danger mb-3"></i>
+                            <h3>Contenido Educativo</h3>
+                            <ul class="list-unstyled">
+                                <li>Python/Flask</li>
+                                <li>C# y .NET</li>
+                                <li>Unity 3D</li>
+                                <li>Blender 3D...</li>
+                            </ul>
+                            <a href="https://youtube.com/@mectoystv" target="_blank"  class="btn btn-outline-danger">
+                                Suscríbete <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body text-center">
+                            <i class="fab fa-patreon fa-3x text-danger mb-3"></i>
+                            <h3>Patreon</h3>
+                            <ul class="list-unstyled">
+                                <li>Asesoría técnica 1:1</li>
+                                <li>Código fuente de proyectos</li>
+                                <li>Revisiones de código o ayuda</li>
+                                <li>Archivos descargables...</li>
+                            </ul>
+                            <a href="https://www.patreon.com/c/mectoystv" target="_blank"  class="btn btn-outline-danger">
+                                Suscríbete <i class="fab fa-patreon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">🚀 Proyectos Destacados</h2>
+            
+            <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Grupo 1 -->
+                    <div class="carousel-item active">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow">
+                                    <img src="media/MasterDetail.png" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5>Master Details</h5>
+                                        <p>Proyecto en C# con Windows Forms</p>
+                                        <a href="https://youtube.com/playlist?list=PLQeyQuEE4z3-QJIZVBZJtyLkQqaMjYPyy" 
+                                        target="_blank"  class="btn btn-primary">Ver en YouTube</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow">
+                                    <img src="media/CargameUnity.png" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5>Car Game</h5>
+                                        <p>Videojuego en Unity 3D</p>
+                                        <a href="https://youtube.com/playlist?list=PLQeyQuEE4z39bGzvJkM31TwyKYyLSTrEX" 
+                                        target="_blank" class="btn btn-primary">Ver en YouTube</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Grupo 2 -->
+                    <div class="carousel-item">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow">
+                                    <img src="media/HighChart.png" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5>Tutorial HighChart</h5>
+                                        <p>Gráficos interactivos</p>
+                                        <a href="https://youtube.com/playlist?list=PLQeyQuEE4z39gQHIZtBvfTPXWAHLURQ-n" 
+                                        target="_blank" class="btn btn-primary">Ver en YouTube</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow">
+                                    <img src="media/Folium.png" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5>Tutorial Folium</h5>
+                                        <p>Biblioteca permite la concepción de mapas interactivos</p>
+                                        <a href="https://youtube.com/playlist?list=PLQeyQuEE4z39n6RGbDsug1bQHKoadI0s7&si=wBXFMwnBNVyKbjkL" 
+                                        target="_blank" class="btn btn-primary">Ver en YouTube</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grupo 3 -->
+                    <div class="carousel-item">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow">
+                                    <img src="media/Tipocambio.png" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5>Tipo Cambio</h5>
+                                        <p>Extracción de la web en Tipo de Cambio</p>
+                                        <a href="https://youtube.com/playlist?list=PLQeyQuEE4z3_xKXQEXcTb4ilWSp6s-PQk&si=factgcRr0ZJ5gJkp" 
+                                        target="_blank" class="btn btn-primary">Ver en YouTube</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow">
+                                    <img src="media/RompeLadrillos.png" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5>Breaking Bricks</h5>
+                                        <p>Este listado aprenderás a crear un videojuego llamado Breaking Bricks.</p>
+                                        <a href="https://youtube.com/playlist?list=PLQeyQuEE4z38WjYFHSGixT7-Vpp_UILvQ&si=smUjucfbaeSztSIs" 
+                                        target="_blank" class="btn btn-primary">Ver en YouTube</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+
+                     <!-- Grupo 4 -->
+                     <div class="carousel-item">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow">
+                                    <img src="media/Atencion_cliente.png" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5>Control Atención</h5>
+                                        <p>Desarrollo de una web CRUD usando Flask de Pyhton</p>
+                                        <a href="https://youtube.com/playlist?list=PLQeyQuEE4z3-BKO0nuzZHZncByZFAPVz4&si=k-NVMOUpAzDJQ0hD" 
+                                        target="_blank" class="btn btn-primary">Ver en YouTube</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow">
+                                    <img src="" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5>github</h5>
+                                        <p>github</p>
+                                        <a href="https://https://github.com/mectoys" 
+                                        target="_blank" class="btn btn-primary">Ver en YouTube</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-5 bg-dark text-white">
+        <div class="container">
+            <h2 class="text-center mb-5">📞 Contáctame</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0">
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-envelope me-2"></i>
+                            mectoys2013@gmail.com
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone me-2"></i>
+                            +51 958816944
+                        </li>
+                        <li class="mb-3">
+                            <i class="fab fa-github me-2"></i>
+                            github.com/mectoys
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-4">
+        <div class="container text-center">
+            <div class="mb-3">
+                <a href="https://www.patreon.com/MectoysTV" class="text-white mx-3">
+                    <i class="fab fa-patreon fa-2x"></i>
+                </a>
+            </div>
+            <p>&copy; 2023 MectoysTV. Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth Scroll mejorado
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                const headerOffset = 70;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Formulario de contacto
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Mensaje enviado con éxito. ¡Gracias!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
