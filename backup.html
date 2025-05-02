@@ -1,62 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-     <!-- Metadatos básicos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-     <!-- Primary Meta Tags -->
-     <title>MectoysTV | Tutoriales de Programación y Desarrollo de Software</title>
-     <meta name="title" content="MectoysTV | Tutoriales de Programación y Desarrollo de Software">
-     <meta name="description" content="Aprende programación con tutoriales prácticos de Python, C#, Unity y Blender. Proyectos reales con código abierto y soporte para desarrolladores">
-     <meta name="keywords" content="tutoriales programación, aprender python, desarrollo videojuegos unity, proyectos código abierto, cursos c#">
-     <meta name="author" content="José Ponciano">
- 
-     <!-- Open Graph / Facebook -->
-     <meta property="og:type" content="website">
-     <meta property="og:url" content="https://mectoys.github.io/mectoys-website/">
-     <meta property="og:title" content="MectoysTV | Tutoriales de Programación y Desarrollo de Software">
-     <meta property="og:description" content="Aprende programación con tutoriales prácticos de Python, C#, Unity y Blender. Proyectos reales con código abierto">
-     <meta property="og:image" content="https://mectoys.github.io/mectoys-website/media/Fotomectoys.png">
- 
-     <!-- Twitter -->
-     <meta property="twitter:card" content="summary_large_image">
-     <meta property="twitter:url" content="https://mectoys.github.io/mectoys-website/">
-     <meta property="twitter:title" content="MectoysTV | Tutoriales de Programación y Desarrollo de Software">
-     <meta property="twitter:description" content="Aprende programación con tutoriales prácticos de Python, C#, Unity y Blender. Proyectos reales con código abierto">
-     <meta property="twitter:image" content="https://mectoys.github.io/mectoys-website/media/Fotomectoys.png">
- 
-     <!-- Schema.org -->
-     <script type="application/ld+json">
-     {
-         "@context": "https://schema.org",
-         "@type": "Person",
-         "name": "José Ponciano",
-         "url": "https://mectoys.github.io/mectoys-website/",
-         "image": "https://mectoys.github.io/mectoys-website/media/Fotomectoys.png",
-         "jobTitle": "Analista de Sistemas",
-         "description": "Especialista en desarrollo de software con Python, C# y Unity 3D",
-         "sameAs": [
-             "https://github.com/mectoys",
-             "https://youtube.com/@mectoystv",
-             "https://www.linkedin.com/in/jponciano"
-         ]
-     }
-     </script>
-
-    <!-- Enlaces a recursos -->
+    <title>MectoysTV - Desarrollo y Tutoriales</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --color-primario: #2A5CAA;
+            --color-secundario: #333333;
+            --transition-base: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://source.unsplash.com/random/1920x1080/?code') center/cover;
+            color: white;
+            padding: 120px 0;
+            margin-top: 56px;
+        }
+        
+        .project-card img {
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+            transition: var(--transition-base);
+        }
 
-    <link href="assets/css/style.css" rel="stylesheet">
+        .card {
+            transition: var(--transition-base);
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            top: 40%;
+            background-color: rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background-color: rgba(0,0,0,0.3);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-primario);
+            transition: var(--transition-base);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            transition: var(--transition-base) !important;
+        }
+
+        [data-aos] {
+            transition: var(--transition-base);
+        }
+
+        /* Añade al final de tu sección de estilos */
+        .btn-download {
+            background: linear-gradient(45deg, #2A5CAA, #1e3d73);
+            border: none;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(42, 92, 170, 0.4);
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#" data-aos="fade-right">
-                <img src="assets/media/LogoMectoysTVYT_2024.png" alt="mectoys" width="100" loading="lazy">
+                <img src="media/LogoMectoysTVYT_2024.png" alt="mectoys" width="100">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -80,7 +133,7 @@
     <!-- Hero Section -->
     <header class="hero-section text-center">
         <div class="container" data-aos="zoom-in" data-aos-delay="300">
-            <img src="assets/media/Fotomectoys.png" alt="José Ponciano" loading="lazy"
+            <img src="media/Fotomectoys.png" alt="José Ponciano" 
                  class="rounded-circle mb-4" width="150"
                  data-aos="zoom-in" data-aos-delay="400">
             <h1 class="display-4" data-aos="fade-up" data-aos-delay="500">Transformando ideas en código</h1>
@@ -109,21 +162,27 @@
             <div class="row g-4">
                 <div class="col-md-4" data-aos="fade-right" data-aos-delay="200">
                     <div class="card h-100 shadow">
-                        <img src="assets/media/FastBurger.png" class="card-img-top" loading="lazy">
-                        <div class="card-body">
-                            <h3><strong>FastBurgerKit </strong> </h3>
-                            <p>plantilla moderna y ligera para restaurantes, cafeterías, etc.</p>
-                            <a href="https://mectoys.gumroad.com/l/FastBurgerKit" 
-                            target="_blank"   class="btn btn-outline-danger">Comprar aquí  </a>
+                        <div class="card-body text-center">
+                            <i class="fab fa-youtube fa-3x text-danger mb-3"></i>
+                            <h3>Contenido Educativo</h3>
+                            <ul class="list-unstyled">
+                                <li>Python/Flask</li>
+                                <li>C# y .NET</li>
+                                <li>Unity 3D</li>
+                                <li>Blender 3D...</li>
+                            </ul>
+                            <a href="https://youtube.com/@mectoystv" target="_blank"  class="btn btn-outline-danger">
+                                Suscríbete <i class="fab fa-youtube"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4" data-aos="fade-left" data-aos-delay="300">
                     <div class="card h-100 shadow">
-                        <img src="assets/media/Patreon.png" class="card-img-top" loading="lazy">
-                        <div class="card-body">                         
-                             <h3><strong> Patreon</strong></h3> 
+                        <div class="card-body text-center">
+                            <i class="fab fa-patreon fa-3x text-danger mb-3"></i>
+                            <h3>Patreon</h3>
                             <ul class="list-unstyled">
                                 <li>Asesoría técnica 1:1</li>
                                 <li>Código fuente de proyectos</li>
@@ -131,7 +190,7 @@
                                 <li>Archivos descargables...</li>
                             </ul>
                             <a href="https://www.patreon.com/c/mectoystv" target="_blank"  class="btn btn-outline-danger">
-                                Suscríbete 
+                                Suscríbete <i class="fab fa-patreon"></i>
                             </a>
                         </div>
                     </div>
@@ -144,17 +203,18 @@
                             <h3>Descargar CV</h3>
                             <ul class="list-unstyled">
                             </ul>
-                            <a href="assets/media/docs/CV_Jose_Ponciano.pdf" 
+                            <a href="media/docs/CV_Jose_Ponciano.pdf" 
                                 class="btn btn-info btn-lg btn-download"
                                 download="CV_Jose_Ponciano.pdf"
-                                title="Descargar currículum en formato PDF"
-                                aria-label="Descargar CV">
-                             <i class="fas fa-file-pdf"></i>  
-                             
+                                title="Descargar currículum en formato PDF (1.2MB)">
+                             <i class="fas fa-file-pdf"></i> Descargar CV
                          </a>
                         </div>
                     </div>
                 </div>   
+
+
+
             </div>
         </div>
     </section>
@@ -171,7 +231,7 @@
                         <div class="row g-4 justify-content-center">
                             <div class="col-md-4">
                                 <div class="card h-100 shadow">
-                                    <img src="assets/media/MasterDetail.png" class="card-img-top" loading="lazy">
+                                    <img src="media/MasterDetail.png" class="card-img-top">
                                     <div class="card-body">
                                         <h5>Master Details</h5>
                                         <p>Proyecto en C# con Windows Forms</p>
@@ -183,7 +243,7 @@
                             
                             <div class="col-md-4">
                                 <div class="card h-100 shadow">
-                                    <img src="assets/media/CargameUnity.png" class="card-img-top" loading="lazy">
+                                    <img src="media/CargameUnity.png" class="card-img-top">
                                     <div class="card-body">
                                         <h5>Car Game</h5>
                                         <p>Videojuego en Unity 3D</p>
@@ -200,7 +260,7 @@
                         <div class="row g-4 justify-content-center">
                             <div class="col-md-4">
                                 <div class="card h-100 shadow">
-                                    <img src="assets/media/HighChart.png" class="card-img-top" loading="lazy">
+                                    <img src="media/HighChart.png" class="card-img-top">
                                     <div class="card-body">
                                         <h5>Tutorial HighChart</h5>
                                         <p>Gráficos interactivos</p>
@@ -212,7 +272,7 @@
                             
                             <div class="col-md-4">
                                 <div class="card h-100 shadow">
-                                    <img src="assets/media/Folium.png" class="card-img-top" loading="lazy">
+                                    <img src="media/Folium.png" class="card-img-top">
                                     <div class="card-body">
                                         <h5>Tutorial Folium</h5>
                                         <p>Biblioteca permite la concepción de mapas interactivos</p>
@@ -229,7 +289,7 @@
                         <div class="row g-4 justify-content-center">
                             <div class="col-md-4">
                                 <div class="card h-100 shadow">
-                                    <img src="assets/media/Tipocambio.png" class="card-img-top" loading="lazy">
+                                    <img src="media/Tipocambio.png" class="card-img-top">
                                     <div class="card-body">
                                         <h5>Tipo Cambio</h5>
                                         <p>Extracción de la web en Tipo de Cambio</p>
@@ -241,7 +301,7 @@
                             
                             <div class="col-md-4">
                                 <div class="card h-100 shadow">
-                                    <img src="assets/media/RompeLadrillos.png" class="card-img-top" loading="lazy">
+                                    <img src="media/RompeLadrillos.png" class="card-img-top">
                                     <div class="card-body">
                                         <h5>Breaking Bricks</h5>
                                         <p>Este listado aprenderás a crear un videojuego llamado Breaking Bricks.</p>
@@ -258,7 +318,7 @@
                         <div class="row g-4 justify-content-center">
                             <div class="col-md-4">
                                 <div class="card h-100 shadow">
-                                    <img src="assets/media/Atencion_cliente.png" class="card-img-top" loading="lazy">
+                                    <img src="media/Atencion_cliente.png" class="card-img-top">
                                     <div class="card-body">
                                         <h5>Control Atención</h5>
                                         <p>Desarrollo de una web CRUD usando Flask de Pyhton</p>
@@ -333,13 +393,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-4" itemscope itemtype="https://schema.org/Person">
+    <footer class="bg-black text-white py-4">
         <div class="container text-center">
-            <!-- Añade esto dentro del footer -->
-            <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                <meta itemprop="addressLocality" content="Trujillo">
-                <meta itemprop="addressCountry" content="Perú">
-            </div>
             <div class="mb-3" data-aos="zoom-in">
                 <a href="https://www.patreon.com/MectoysTV" class="text-white mx-3">
                     <i class="fab fa-patreon fa-2x"></i>
