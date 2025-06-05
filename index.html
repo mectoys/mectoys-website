@@ -26,6 +26,9 @@
      <meta property="twitter:description" content="Aprende programación con tutoriales prácticos de Python, C#, Unity y Blender. Proyectos reales con código abierto">
      <meta property="twitter:image" content="https://mectoys.github.io/mectoys-website/media/Fotomectoys.png">
  
+
+
+
      <!-- Schema.org -->
      <script type="application/ld+json">
      {
@@ -49,7 +52,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <!---CSS personalizados -->
+    <link rel="stylesheet" href="assets/css/animation.css">
     <link href="assets/css/style.css" rel="stylesheet">
+
+     <!-- Font Awesome CDN -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..."
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -310,39 +325,87 @@
         <div class="container">
             <h2 class="text-center mb-5" data-aos="fade-up">📞 Contáctame</h2>
             <div class="row">
+                <!-- Formulario -->
                 <div class="col-md-6" data-aos="fade-right">
-                    <form id="contactForm">
+                    <form id="contactForm" onsubmit="sendToWhatsApp(event)">
+                        
                         <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Nombre" required>
+                            <input type="text" id="name" class="form-control" placeholder="Nombre completo" required>
                         </div>
+
                         <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                            <input type="phone" id="phone" class="form-control" placeholder="Número Celular" required>
                         </div>
+
                         <div class="mb-3">
-                            <textarea class="form-control" rows="4" placeholder="Mensaje" required></textarea>
+                            <textarea id="message" class="form-control" rows="4" placeholder="Tu mensaje..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+
+                        <button type="submit" class="btn btn-success w-100">
+                            <i class="fab fa-whatsapp me-2"></i> Enviar por WhatsApp
+                        </button>
                     </form>
                 </div>
+
+                <!-- Información de contacto -->
                 <div class="col-md-6 mt-4 mt-md-0" data-aos="fade-left" data-aos-delay="200">
-                    <ul class="list-unstyled">
+
+                    <!-- Bloque de redes sociales -->
+                    <div class="text-center mt-5">
+                        <ul class="list-unstyled">
                         <li class="mb-3">
                             <i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:mectoys2013@gmail.com" class="text-white text-decoration-none hover-underline">
                             mectoys2013@gmail.com
+                            </a>
                         </li>
-                        <li class="mb-3">
-                            <i class="fas fa-phone me-2"></i>
-                            +51 958816944
-                        </li>
-                        <li class="mb-3">
-                            <i class="fab fa-github me-2"></i>
-                            github.com/mectoys
-                        </li>
-                    </ul>
+                        </ul>
+                    <h3 class="h4 mb-4 fw-bold">Sígueme en Redes Sociales</h3>
+                    <div class="d-flex justify-content-center gap-4 flex-wrap">
+                            
+                            <!-- GitHub -->
+                            <a href="https://github.com/mectoys" target="_blank" rel="noopener noreferrer"
+                            class="bg-white rounded-circle p-2 text-dark fs-3 social-icon" title="GitHub">
+                            <i class="fab fa-github"></i>
+                            </a>
+
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer"
+                            class="bg-white rounded-circle p-2 text-dark fs-3 social-icon" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                            </a>
+
+                            <!-- Facebook -->
+                            <a href="https://facebook.com/mectoys.colecciones" target="_blank" rel="noopener noreferrer"
+                            class="bg-white rounded-circle p-2 text-dark fs-3 social-icon" title="Facebook">
+                            <i class="fab fa-facebook-square"></i>
+                            </a>
+
+                            <!-- Instagram -->
+                            <a href="https://instagram.com/mectoyscolecciones" target="_blank" rel="noopener noreferrer"
+                            class="bg-white rounded-circle p-2 text-dark fs-3 social-icon" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                            </a>
+
+                            <!-- YouTube -->
+                            <a href="https://youtube.com/@mectoystv" target="_blank" rel="noopener noreferrer"
+                            class="bg-white rounded-circle p-2 text-dark fs-3 social-icon" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                            </a>
+
+                            <!-- TikTok -->
+                            <a href="https://tiktok.com/@mectoystv" target="_blank" rel="noopener noreferrer"
+                               class="bg-white rounded-circle p-2 text-dark fs-3 social-icon" title="TikTok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </div>
+        </div>     
     </section>
+
 
     <!-- Footer -->
     <footer class="bg-black text-white py-4" itemscope itemtype="https://schema.org/Person">
@@ -357,9 +420,13 @@
                     <i class="fab fa-patreon fa-2x"></i>
                 </a>
             </div>
-            <p data-aos="fade-up">&copy; 2023 MectoysTV. Todos los derechos reservados</p>
+            <p data-aos="fade-up">&copy; 2023 MectoysTV. Todos los derechos reservados Ver 1.01</p>
         </div>
     </footer>
+
+
+    
+    <script src="assets/js/whatsapp.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -388,12 +455,7 @@
             });
         });
 
-        // Formulario de contacto
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Mensaje enviado con éxito. ¡Gracias!');
-            this.reset();
-        });
+
     </script>
 </body>
 </html>
